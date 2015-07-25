@@ -10,16 +10,23 @@ var App = {
 
     motd: function(ret){
         if (typeof ret === 'undefined') ret = false;
-        var greetText = 
+        var blankGreetText = 
             "####################################################################################\n"+
-            "|[[b;#00DE12;]\t                       _                                                  ]\t|\n"+
-            "|[[b;#00DE12;]\t _ __ ___  _ __  _ __ (_) ___ _ __  _   _ _ __   ___   ___ ___  _ __ ___  ]\t|\n"+
-            "|[[b;#00DE12;]\t| '__/ _ \\| '_ \\| '_ \\| |/ _ \\ '_ \\| | | | '_ \\ / _ \\ / __/ _ \\| '_ ` _ \\ ]\t|\n"+
-            "|[[b;#00DE12;]\t| | ( (_) ) | | | | | | |  __/ (_) | |_| | | | |  __/( (_| (_) | | | | | |]\t|\n"+
-            "|[[b;#00DE12;]\t|_|  \\___/|_| |_|_| |_|_|\\___| .__/ \\__. |_| |_|\\___( )___\\___/|_| |_| |_|]\t|\n"+
-            "|[[b;#00DE12;]\t                             |_|    |___/                                 ]\t|\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
-            "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t\t|\n"+
+            "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t\t\t|\n"+
+            "|\tPlease type " + commandText('menu') + " for a list of commands.  \t\t\t\t\t\t\t\t\t|\n"+
+            "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
+            "####################################################################################\n";
+
+	var greetText =
+	    "####################################################################################\n"+
+	    "|[[b;#00DE12;]\t _____                   _  _                              ]\t\t|\n"+
+            "|[[b;#00DE12;]\t|_   _|___  __ _  _ _   | \| | __ _  _  _  _  _  ___  _ _  ]\t\t|\n"+
+            "|[[b;#00DE12;]\t  | | / _ \/ _\` || ' \  | .\` |/ _\` || || || || |/ -_)| ' \ ]\t\t|\n";
+	    "|[[b;#00DE12;]\t  |_| \___/\__,_||_||_| |_|\_|\__, | \_,_| \_, |\___||_||_|]\t\t|\n"+
+	    "|[[b;#00DE12;]\t                              |___/        |__/            ]\t\t|\n"+
+	    "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
+	    "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t\t\t|\n"+
             "|\tPlease type " + commandText('menu') + " for a list of commands.  \t\t\t\t\t\t\t\t\t|\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
             "####################################################################################\n";
@@ -38,7 +45,7 @@ var App = {
         this.echo("|  " + commandText("about") + "              - Summary of me");
         this.echo("|  " + commandText("projects") + "           - Recent projects of mine");
         this.echo("|  " + commandText("skills") + "             - What I can do");
-        this.echo("|  " + commandText("awards") + "             - Awards and features for my work");
+        //this.echo("|  " + commandText("awards") + "             - Awards and features for my work");
         this.echo();
         this.echo("|  " + commandText("github") + "             - Das github");
         this.echo("|  " + commandText("linkedin") + "           - How I connect for work things");
