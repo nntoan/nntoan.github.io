@@ -93,9 +93,9 @@ var App = {
     projects: function(){
         this.echo();
         this.echo("|  " + commandText('HDA Design') + "            http://hdadesign.vn     // Backend Lead");
-        this.echo("|  " + commandText('Mặt Phố') + "         https://www.matpho.vn      // Backend Lead");
-        this.echo("|  " + commandText('Glam It!') + "                  http://www.glamit.com             // Backend Developer");
-        this.echo("|  " + commandText('Renca') + "       http://renca.jp   // Backend Developer");
+        this.echo("|  " + commandText('Mặt Phố') + "               https://www.matpho.vn      // Backend Lead");
+        this.echo("|  " + commandText('Glam It!') + "              http://www.glamit.com             // Backend Developer");
+        this.echo("|  " + commandText('Renca') + "                 http://renca.jp   // Backend Developer");
         this.echo();
     },
 
