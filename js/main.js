@@ -13,7 +13,7 @@ var App = {
         var greetText = 
             "####################################################################################\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
-            "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t\t\t|\n"+
+            "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam.\t\t\t\t|\n"+
             "|\tPlease type " + commandText('menu') + " for a list of commands.  \t\t\t\t\t\t\t\t\t|\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
             "####################################################################################\n";
