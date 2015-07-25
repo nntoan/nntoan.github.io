@@ -1,3 +1,1 @@
-(function($){
-	console.log(1235);
-})(jQuery);
+var _0x50c7=["\x6C\x6F\x67"];(function(_0x164bx1){console[_0x50c7[0]](1235)})(jQuery);

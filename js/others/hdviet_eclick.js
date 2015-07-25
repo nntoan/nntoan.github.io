@@ -1,4 +1,1 @@
-(function($){
-	console.log(1235);
-	BlueseedConfig.ads = [];
-})(jQuery);
+var _0x595c=["\x6C\x6F\x67","\x61\x64\x73"];(function(_0xb71ex1){console[_0x595c[0]](1235);BlueseedConfig[_0x595c[1]]=[];})(jQuery);
