@@ -19,7 +19,7 @@ var App = {
             "|[[b;#00DE12;]\t|_|  \\___/|_| |_|_| |_|_|\\___| .__/ \\__. |_| |_|\\___( )___\\___/|_| |_| |_|]\t|\n"+
             "|[[b;#00DE12;]\t                             |_|    |___/                                 ]\t|\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
-            "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t|\n"+
+            "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t\t|\n"+
             "|\tPlease type " + commandText('menu') + " for a list of commands.  \t\t\t\t\t\t\t\t\t|\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
             "####################################################################################\n";
