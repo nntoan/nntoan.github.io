@@ -10,7 +10,7 @@ var App = {
 
     motd: function(ret){
         if (typeof ret === 'undefined') ret = false;
-        var blankGreetText = 
+        var greetText = 
             "####################################################################################\n"+
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
             "|\tHi, I'm " + commandText('Toan Nguyen') + " - Backend Web Developer in Hanoi, Vietnam. \t\t\t\t\t|\n"+
@@ -18,7 +18,7 @@ var App = {
             "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n"+
             "####################################################################################\n";
 
-	var greetText =
+	var suckedgreetText =
             "####################################################################################\n"+
             "|[[b;#00DE12;]\t _____                       _  _                              ]\t\t\t\t|\n"+
             "|[[b;#00DE12;]\t|_   _|___  __ _  _ _     | \| | __ _  _  _  _  _  ___  _ _  ]\t\t|\n"+
