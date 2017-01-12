@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Unsecured Debt Calculator</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.ui/1.11.4/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/loan.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/home-loan-emi-calculator.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/loan.js"></script>
+</head>
+<body>
+<div style="margin: auto; min-height: 301px;">
+    <div style="clear:both;"></div>
+    <!-- content -->
+    <div style="width: 981px; height: auto; margin: auto; margin-top: 10px; min-height: 200px;">
+        <div style="clear: both;"></div>
+        <div class="pl_emi_cal_text" style=" margin-top: 20px;">
+            <div class="text11" style="color: #4c4c4c; margin-top: 10px;">
+                <h3 align="center"><span
+                        style="font-size: x-large; color: #69b01b; font-family: arial, helvetica, sans-serif;">C&ocirc;ng cụ t&iacute;nh l&atilde;i suất vay vốn ti&ecirc;u d&ugrave;ng (vay tín chấp)</span>
+                </h3>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <br>
+        <!---------------------------------------->
+        <div class="text" style="color: #4c4c4c; size: 18px; height: 37px; padding-left: 10px; clear:both">
+            <span class="process_sec"><strong>Chọn thông tin thuộc tính theo nhu cầu</strong></span>
+        </div>
+        <div style="clear:both"></div>
+        <div class="hl_emi_process_box">
+            <div style="border: #666666 1px solid; padding-left: 5px; background-color: #F8F8F8; margin-top: 10px;">
+                <table border="0" cellpadding="3" cellspacing="2" width="95%" align="center">
+                    <tbody>
+                    <tr>
+                        <td colspan="3" height="5"></td>
+                    </tr>
+                    <tr>
+                        <td width="199" height="20"
+                            style="color: #333333; font-weight: bold; font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
+                            Số tiền vay<span style="font-weight: normal;">&nbsp;&nbsp;&nbsp;</span>
+                        </td>
+                        <td width="72"><input type="test" value="0" name="amount_1a" id="amount_1a" size="11"
+                                              onchange="EMI_calc();" maxlength="9"></td>
+                        <td width="266"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="25">
+                            <div id="slider_la"
+                                 class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style=""></div>
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                   style="left: 5.084745762711865%;"></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="20"></td>
+                    </tr>
+                    <tr>
+                        <td height="20"
+                            style="color: #333333; font-weight: bold; font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
+                            Lãi suất
+                        </td>
+                        <td><input type="test" value="0" name="amount_intr" id="amount_intr" size="11"
+                                   onchange="EMI_calc();" maxlength="6"></td>
+                        <td style="color: #333333; font-weight: bold; font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
+                            % Mỗi năm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="25">
+                            <div id="slider_intr"
+                                 class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style=""></div>
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                   style="left: 14.0625%;"></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="20"></td>
+                    </tr>
+                    <tr>
+                        <td height="20"
+                            style="color: #333333; font-weight: bold; font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
+                            Thời hạn vay
+                        </td>
+                        <td><input type="test" value="0" name="amount_lt" id="amount_lt" size="11"
+                                   onchange=" EMI_calc();" maxlength="1"></td>
+                        <td style="color: #333333; font-weight: bold; font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
+                            Năm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="25">
+                            <div id="slider_lt"
+                                 class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style=""></div>
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                   style="left: 50%;"></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="hl_emi_right_box">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="middle" class="text"
+                        style="color: #4c4c4c; size: 18px; height: 37px; padding-left: 20px;">Kết Quả Mẫu
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="emi_right_box">
+                            <div style="float: left; width: 100%; background-color: #F8F8F8; padding-bottom: 0px;">
+                                <div class="emi_sum_amount" style="background-color: #F8F8F8;">Số tiền vay</div>
+                                <div class="emi_sum_value" id="loan_amt" style="background-color: #F8F8F8;"><span>30,000,000 VNĐ</span>
+                                </div>
+                                <div class="emi_sum_amount" style="background-color: #DADADA;">Thanh toán hàng
+                                    tháng
+                                </div>
+                                <div class="emi_sum_value" id="emi_monthly" style="background-color: #DADADA;">
+                                    <span>1,032,629 VNĐ</span></div>
+                                <div class="emi_sum_amount" style="background-color: #F8F8F8;">Tổng số tiền lãi
+                                </div>
+                                <div class="emi_sum_value" id="total_intr" style="background-color: #F8F8F8;"><span>7,174,656 VNĐ</span>
+                                </div>
+                                <div class="emi_sum_amount" style="background-color: #DADADA;">Tổng số tiền (gốc +
+                                    lãi)
+                                </div>
+                                <div class="emi_sum_value" style="background-color: #DADADA;" id="total_amt"><span>37,174,656 VNĐ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div id="container" style="height: 200px;" data-highcharts-chart="0">
+                            <div class="highcharts-container" id="highcharts-0"
+                                 style="position: relative; overflow: hidden; width: 200px; height: 200px; text-align: left; line-height: normal; z-index: 0; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana , Arial, Helvetica, sans-serif; font-size: 12px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                     width="200" height="200">
+                                    <defs>
+                                        <clippath
+                                                id="highcharts-1">
+                                            <rect rx="0" ry="0" fill="none"
+                                                  x="0" y="0" width="9999" height="200"
+                                                  stroke-width="0.000001"></rect>
+                                        </clippath>
+                                        <clippath id="highcharts-2">
+                                            <rect fill="none"
+                                                  x="0" y="0" width="180" height="122"></rect>
+                                        </clippath>
+                                    </defs>
+                                    <rect rx="5"
+                                          ry="5" fill="#FFFFFF" x="0" y="0" width="200" height="200"
+                                          stroke-width="0.000001"></rect>
+                                    <g
+                                            class="highcharts-series-group" zIndex="3"></g>
+                                    <g
+                                            class="highcharts-shadow" zIndex="4"
+                                            transform="translate(10,10)">
+                                        <path fill="none"
+                                              d="M 89.99068195093095 15.250000948918462 A 45.75 45.75 0 1 1 44.33905896929119 58.14676250723285 L 90 61 A 0 0 0 1 0 90 61 Z"
+                                              stroke="black" stroke-width="5" stroke-linejoin="round"
+                                              isShadow="true" stroke-opacity="0.049999999999999996"
+                                              transform="translate(1, 1)" x="90" y="61"></path>
+                                        <path
+                                                fill="none"
+                                                d="M 89.99068195093095 15.250000948918462 A 45.75 45.75 0 1 1 44.33905896929119 58.14676250723285 L 90 61 A 0 0 0 1 0 90 61 Z"
+                                                stroke="black" stroke-width="3" stroke-linejoin="round"
+                                                isShadow="true" stroke-opacity="0.09999999999999999"
+                                                transform="translate(1, 1)" x="90" y="61"></path>
+                                        <path
+                                                fill="none"
+                                                d="M 89.99068195093095 15.250000948918462 A 45.75 45.75 0 1 1 44.33905896929119 58.14676250723285 L 90 61 A 0 0 0 1 0 90 61 Z"
+                                                stroke="black" stroke-width="1" stroke-linejoin="round"
+                                                isShadow="true" stroke-opacity="0.15"
+                                                transform="translate(1, 1)" x="90" y="61"></path>
+                                    </g>
+                                    <g
+                                            class="highcharts-shadow" zIndex="4"
+                                            transform="translate(3,3)">
+                                        <path fill="none"
+                                              d="M 44.33906182255151 58.14671684629324 A 45.75 45.75 0 0 1 89.98215839785266 15.25000347893748 L 90 61 A 0 0 0 0 0 90 61 Z"
+                                              stroke="black" stroke-width="5" stroke-linejoin="round"
+                                              isShadow="true" stroke-opacity="0.049999999999999996"
+                                              transform="translate(1, 1)" x="90" y="61"></path>
+                                        <path
+                                                fill="none"
+                                                d="M 44.33906182255151 58.14671684629324 A 45.75 45.75 0 0 1 89.98215839785266 15.25000347893748 L 90 61 A 0 0 0 0 0 90 61 Z"
+                                                stroke="black" stroke-width="3" stroke-linejoin="round"
+                                                isShadow="true" stroke-opacity="0.09999999999999999"
+                                                transform="translate(1, 1)" x="90" y="61"></path>
+                                        <path
+                                                fill="none"
+                                                d="M 44.33906182255151 58.14671684629324 A 45.75 45.75 0 0 1 89.98215839785266 15.25000347893748 L 90 61 A 0 0 0 0 0 90 61 Z"
+                                                stroke="black" stroke-width="1" stroke-linejoin="round"
+                                                isShadow="true" stroke-opacity="0.15"
+                                                transform="translate(1, 1)" x="90" y="61"></path>
+                                    </g>
+                                    <g
+                                            class="highcharts-point" zIndex="5"
+                                            transform="translate(10,10)">
+                                        <path fill="#4572A7"
+                                              d="M 89.99068195093095 15.250000948918462 A 45.75 45.75 0 1 1 44.33905896929119 58.14676250723285 L 90 61 A 0 0 0 1 0 90 61 Z"
+                                              stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"></path>
+                                        <path fill="rgb(192,192,192)"
+                                              d="M 89.99068195093095 15.250000948918462 A 45.75 45.75 0 1 1 44.33905896929119 58.14676250723285 L 90 61 A 0 0 0 1 0 90 61 Z"
+                                              isTracker="1366707971819" fill-opacity="0.0001"
+                                              visibility="visible" style="cursor:pointer;"></path>
+                                    </g>
+                                    <g
+                                            class="highcharts-point" zIndex="5"
+                                            transform="translate(3,3)">
+                                        <path fill="#AA4643"
+                                              d="M 44.33906182255151 58.14671684629324 A 45.75 45.75 0 0 1 89.98215839785266 15.25000347893748 L 90 61 A 0 0 0 0 0 90 61 Z"
+                                              stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"></path>
+                                        <path fill="rgb(192,192,192)"
+                                              d="M 44.33906182255151 58.14671684629324 A 45.75 45.75 0 0 1 89.98215839785266 15.25000347893748 L 90 61 A 0 0 0 0 0 90 61 Z"
+                                              isTracker="1366707971819" fill-opacity="0.0001"
+                                              visibility="visible" style="cursor:pointer;"></path>
+                                    </g>
+                                    <g
+                                            class="highcharts-legend" zIndex="7"
+                                            transform="translate(18,142)">
+                                        <rect rx="5" ry="5"
+                                              fill="none" x="0.5" y="0.5" width="164" height="42"
+                                              stroke-width="1" stroke="#909090" visibility="visible"></rect>
+                                        <g zIndex="1" clip-path="url(#highcharts-1)">
+                                            <g>
+                                                <g
+                                                        class="highcharts-legend-item" zIndex="1"
+                                                        transform="translate(8,3)">
+                                                    <text x="21" y="15"
+                                                          style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                                          text-anchor="start" zIndex="2">
+                                                        <tspan x="21">Tổng Vay</tspan>
+                                                    </text>
+                                                    <rect rx="2" ry="2" fill="#4572A7" x="0" y="4"
+                                                          width="16" height="12" stroke-width="0.000001" zIndex="3"
+                                                          stroke="#4572A7"></rect>
+                                                </g>
+                                                <g class="highcharts-legend-item"
+                                                   zIndex="1" transform="translate(8,19)">
+                                                    <text x="21"
+                                                          y="15"
+                                                          style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                                          text-anchor="start" zIndex="2">
+                                                        <tspan x="21">Tổng Lãi</tspan>
+                                                    </text>
+                                                    <rect rx="2" ry="2" fill="#AA4643" x="0" y="4"
+                                                          width="16" height="12" stroke-width="0.000001" zIndex="3"
+                                                          stroke="#AA4643"></rect>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g class="highcharts-tooltip"
+                                       zIndex="8" style="padding:0;white-space:nowrap;"
+                                       visibility="hidden">
+                                        <rect rx="5" ry="5" fill="none"
+                                              x="0" y="0" width="10" height="10" stroke-width="5"
+                                              fill-opacity="0.85" isShadow="true" stroke="black"
+                                              stroke-opacity="0.049999999999999996"
+                                              transform="translate(1, 1)"></rect>
+                                        <rect rx="5" ry="5"
+                                              fill="none" x="0" y="0" width="10" height="10"
+                                              stroke-width="3" fill-opacity="0.85" isShadow="true"
+                                              stroke="black" stroke-opacity="0.09999999999999999"
+                                              transform="translate(1, 1)"></rect>
+                                        <rect rx="5" ry="5"
+                                              fill="none" x="0" y="0" width="10" height="10"
+                                              stroke-width="1" fill-opacity="0.85" isShadow="true"
+                                              stroke="black" stroke-opacity="0.15"
+                                              transform="translate(1, 1)"></rect>
+                                        <rect rx="5" ry="5"
+                                              fill="rgb(255,255,255)" x="0" y="0" width="10" height="10"
+                                              stroke-width="2" fill-opacity="0.85"></rect>
+                                        <text x="5"
+                                              y="18"
+                                              style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#333333;fill:#333333;"
+                                              zIndex="1"></text>
+                                    </g>
+                                    <text x="190" y="195"
+                                          style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:10px;cursor:pointer;color:#909090;fill:#909090;"
+                                          text-anchor="end" zIndex="8"></text>
+                                    <g
+                                            class="highcharts-tracker" zIndex="9"></g>
+                                </svg>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="hl_emi_chart">
+            <div id="barChart" data-highcharts-chart="1">
+                <div class="highcharts-container" id="highcharts-3"
+                     style="position: relative; overflow: hidden; width: 623px; height: 300px; text-align: left; line-height: normal; z-index: 0; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana , Arial, Helvetica, sans-serif; font-size: 12px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="623"
+                         height="300">
+                        <defs>
+                            <clippath id="highcharts-4">
+                                <rect rx="0" ry="0" fill="none" x="0" y="0" width="9999"
+                                      height="300" stroke-width="0.000001"></rect>
+                            </clippath>
+                            <clippath
+                                    id="highcharts-5">
+                                <rect fill="none" x="0" y="0"
+                                      width="202" height="558"></rect>
+                            </clippath>
+                        </defs>
+                        <rect rx="5" ry="5"
+                              fill="#FFFFFF" x="0" y="0" width="623" height="300"
+                              stroke-width="0.000001"></rect>
+                        <g class="highcharts-grid"
+                           zIndex="1"></g>
+                        <g class="highcharts-grid" zIndex="1">
+                            <path
+                                    fill="none" d="M 134.5 10 L 134.5 212" stroke="#C0C0C0"
+                                    stroke-width="1" zIndex="1"></path>
+                            <path fill="none"
+                                  d="M 213.5 10 L 213.5 212" stroke="#C0C0C0" stroke-width="1"
+                                  zIndex="1"></path>
+                            <path fill="none" d="M 293.5 10 L 293.5 212"
+                                  stroke="#C0C0C0" stroke-width="1" zIndex="1"></path>
+                            <path
+                                    fill="none" d="M 373.5 10 L 373.5 212" stroke="#C0C0C0"
+                                    stroke-width="1" zIndex="1"></path>
+                            <path fill="none"
+                                  d="M 453.5 10 L 453.5 212" stroke="#C0C0C0" stroke-width="1"
+                                  zIndex="1"></path>
+                            <path fill="none" d="M 532.5 10 L 532.5 212"
+                                  stroke="#C0C0C0" stroke-width="1" zIndex="1"></path>
+                            <path
+                                    fill="none" d="M 612.5 10 L 612.5 212" stroke="#C0C0C0"
+                                    stroke-width="1" zIndex="1"></path>
+                            <path fill="none"
+                                  d="M 54.5 10 L 54.5 212" stroke="#C0C0C0" stroke-width="1"
+                                  zIndex="1"></path>
+                        </g>
+                        <g class="highcharts-axis" zIndex="2">
+                            <path
+                                    fill="none" d="M 55 111.5 L 50 111.5" stroke="#C0D0E0"
+                                    stroke-width="1"></path>
+                            <path fill="none"
+                                  d="M 55 162.5 L 50 162.5" stroke="#C0D0E0" stroke-width="1"></path>
+                            <path fill="none" d="M 55 212.5 L 50 212.5" stroke="#C0D0E0"
+                                  stroke-width="1"></path>
+                            <path fill="none"
+                                  d="M 55 61.5 L 50 61.5" stroke="#C0D0E0" stroke-width="1"></path>
+                            <path fill="none" d="M 54.5 10 L 54.5 212" stroke="#C0D0E0"
+                                  stroke-width="1" zIndex="7" visibility="visible"></path>
+                        </g>
+                        <g
+                                class="highcharts-axis" zIndex="2">
+                            <text x="334" y="244"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#6D869F;font-weight:bold;fill:#6D869F;"
+                                  zIndex="7" text-anchor="middle" visibility="visible">
+                                <tspan
+                                        x="334">Gốc + Lãi
+                                </tspan>
+                            </text>
+                        </g>
+                        <g
+                                class="highcharts-series-group" zIndex="3">
+                            <g
+                                    class="highcharts-series" visibility="visible" zIndex="0.1"
+                                    transform="translate(613,212) rotate(90) scale(-1,1)" width="558"
+                                    height="202" clip-path="url(#highcharts-5)">
+                                <rect
+                                        fill="none" x="164.5" y="30.5" width="24" height="312"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="164.5"
+                                      y="30.5" width="24" height="314" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="164.5" y="30.5" width="24" height="316"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#4572A7" x="164.5" y="30.5" width="24" height="317"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                                <rect
+                                        fill="none" x="114.5" y="30.5" width="24" height="361"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="114.5"
+                                      y="30.5" width="24" height="363" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="114.5" y="30.5" width="24" height="365"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#4572A7" x="114.5" y="30.5" width="24" height="366"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                                <rect
+                                        fill="none" x="63.5" y="30.5" width="24" height="418"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="63.5"
+                                      y="30.5" width="24" height="420" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="63.5" y="30.5" width="24" height="422"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#4572A7" x="63.5" y="30.5" width="24" height="423"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                                <rect
+                                        fill="none" x="13.5" y="30.5" width="24" height="483"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="13.5"
+                                      y="30.5" width="24" height="485" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="13.5" y="30.5" width="24" height="487"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#4572A7" x="13.5" y="30.5" width="24" height="488"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                            </g>
+                            <g
+                                    class="highcharts-markers" visibility="visible" zIndex="0.1"
+                                    transform="translate(613,212) rotate(90) scale(-1,1)" width="558"
+                                    height="202"></g>
+                            <g class="highcharts-series"
+                               visibility="visible" zIndex="0.1"
+                               transform="translate(613,212) rotate(90) scale(-1,1)" width="558"
+                               height="202" clip-path="url(#highcharts-5)">
+                                <rect
+                                        fill="none" x="164.5" y="347.5" width="24" height="205"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="164.5"
+                                      y="347.5" width="24" height="207" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="164.5" y="347.5" width="24" height="209"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#AA4643" x="164.5" y="347.5" width="24" height="210"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                                <rect
+                                        fill="none" x="114.5" y="396.5" width="24" height="156"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="114.5"
+                                      y="396.5" width="24" height="158" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="114.5" y="396.5" width="24" height="160"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#AA4643" x="114.5" y="396.5" width="24" height="161"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                                <rect
+                                        fill="none" x="63.5" y="453.5" width="24" height="99"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="63.5"
+                                      y="453.5" width="24" height="101" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="63.5" y="453.5" width="24" height="103"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#AA4643" x="63.5" y="453.5" width="24" height="104"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                                <rect
+                                        fill="none" x="13.5" y="518.5" width="24" height="34"
+                                        stroke-width="5" stroke="black" rx="0" ry="0" isShadow="true"
+                                        stroke-opacity="0.049999999999999996"
+                                        transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="13.5"
+                                      y="518.5" width="24" height="36" stroke-width="3" stroke="black"
+                                      rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.09999999999999999" transform="translate(-1,-1)"></rect>
+                                <rect fill="none" x="13.5" y="518.5" width="24" height="38"
+                                      stroke-width="1" stroke="black" rx="0" ry="0" isShadow="true"
+                                      stroke-opacity="0.15" transform="translate(-1,-1)"></rect>
+                                <rect
+                                        fill="#AA4643" x="13.5" y="518.5" width="24" height="39"
+                                        stroke-width="1" stroke="#FFFFFF" rx="0" ry="0"></rect>
+                            </g>
+                            <g
+                                    class="highcharts-markers" visibility="visible" zIndex="0.1"
+                                    transform="translate(613,212) rotate(90) scale(-1,1)" width="558"
+                                    height="202"></g>
+                        </g>
+                        <g class="highcharts-legend" zIndex="7"
+                           transform="translate(233,258)">
+                            <rect rx="5" ry="5"
+                                  fill="#FFFFFF" x="0.5" y="0.5" width="157" height="26"
+                                  stroke-width="1" stroke="#909090" visibility="visible"></rect>
+                            <g
+                                    zIndex="1" clip-path="url(#highcharts-4)">
+                                <g>
+                                    <g
+                                            class="highcharts-legend-item" zIndex="1"
+                                            transform="translate(8,3)">
+                                        <text x="21" y="15"
+                                              style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                              text-anchor="start" zIndex="2">
+                                            <tspan x="21">Lãi</tspan>
+                                        </text>
+                                        <rect rx="2" ry="2" fill="#AA4643" x="0" y="4" width="16"
+                                              height="12" stroke-width="0.000001" zIndex="3"
+                                              stroke="#AA4643"></rect>
+                                    </g>
+                                    <g class="highcharts-legend-item" zIndex="1"
+                                       transform="translate(80,3)">
+                                        <text x="21" y="15"
+                                              style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;"
+                                              text-anchor="start" zIndex="2">
+                                            <tspan x="21">Gốc</tspan>
+                                        </text>
+                                        <rect rx="2" ry="2" fill="#4572A7" x="0" y="4" width="16"
+                                              height="12" stroke-width="0.000001" zIndex="3"
+                                              stroke="#4572A7"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g class="highcharts-axis-labels" zIndex="7">
+                            <text x="47"
+                                  y="33.86110061804701"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:259px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="end" transform="rotate(-25 47 33)">
+                                <tspan
+                                        x="47">Năm 1
+                                </tspan>
+                            </text>
+                            <text x="47" y="84.361100618047"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:259px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="end" transform="rotate(-25 47 84)">
+                                <tspan
+                                        x="47">Năm 2
+                                </tspan>
+                            </text>
+                            <text x="47" y="134.861100618047"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:259px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="end" transform="rotate(-25 47 134)">
+                                <tspan
+                                        x="47">Năm 3
+                                </tspan>
+                            </text>
+                            <text x="47" y="185.361100618047"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:259px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="end" transform="rotate(-25 47 185)">
+                                <tspan
+                                        x="47">Năm 4
+                                </tspan>
+                            </text>
+                        </g>
+                        <g class="highcharts-axis-labels"
+                           zIndex="7">
+                            <text x="55" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="55">0k</tspan>
+                            </text>
+                            <text
+                                    x="134.71428571428572" y="226"
+                                    style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                    text-anchor="middle">
+                                <tspan x="134.71428571428572">10k</tspan>
+                            </text>
+                            <text x="214.42857142857144" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="214.42857142857144">20k</tspan>
+                            </text>
+                            <text x="294.14285714285717" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="294.14285714285717">30k</tspan>
+                            </text>
+                            <text x="373.8571428571429" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="373.8571428571429">40k</tspan>
+                            </text>
+                            <text x="453.5714285714286" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="453.5714285714286">50k</tspan>
+                            </text>
+                            <text x="533.2857142857143" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="533.2857142857143">60k</tspan>
+                            </text>
+                            <text x="613" y="226"
+                                  style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#666;line-height:14px;fill:#666;"
+                                  text-anchor="middle">
+                                <tspan x="613">70k</tspan>
+                            </text>
+                        </g>
+                        <g
+                                class="highcharts-tooltip" zIndex="8"
+                                style="padding:0;white-space:nowrap;" visibility="hidden">
+                            <rect
+                                    rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10"
+                                    stroke-width="5" fill-opacity="0.85" isShadow="true"
+                                    stroke="black" stroke-opacity="0.049999999999999996"
+                                    transform="translate(1, 1)"></rect>
+                            <rect rx="5" ry="5"
+                                  fill="none" x="0" y="0" width="10" height="10" stroke-width="3"
+                                  fill-opacity="0.85" isShadow="true" stroke="black"
+                                  stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></rect>
+                            <rect rx="5" ry="5" fill="none" x="0" y="0" width="10" height="10"
+                                  stroke-width="1" fill-opacity="0.85" isShadow="true"
+                                  stroke="black" stroke-opacity="0.15" transform="translate(1, 1)"></rect>
+                            <rect rx="5" ry="5" fill="rgb(255,255,255)" x="0" y="0" width="10"
+                                  height="10" stroke-width="2" fill-opacity="0.85"></rect>
+                            <text
+                                    x="5" y="18"
+                                    style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#333333;fill:#333333;"
+                                    zIndex="1"></text>
+                        </g>
+                        <text x="613" y="295"
+                              style="font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;font-size:10px;cursor:pointer;color:#909090;fill:#909090;"
+                              text-anchor="end" zIndex="8"></text>
+                        <g
+                                class="highcharts-tracker" zIndex="9">
+                            <g
+                                    visibility="visible" zIndex="1"
+                                    transform="translate(613,212) rotate(90) scale(-1,1)" width="558"
+                                    height="202" clip-path="url(#highcharts-5)">
+                                <rect
+                                        fill="rgb(192,192,192)" x="13.5" y="30.5" width="24" height="488"
+                                        isTracker="1366707972030" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                                <rect
+                                        fill="rgb(192,192,192)" x="63.5" y="30.5" width="24" height="423"
+                                        isTracker="1366707972030" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                                <rect
+                                        fill="rgb(192,192,192)" x="114.5" y="30.5" width="24"
+                                        height="366" isTracker="1366707972030" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                                <rect
+                                        fill="rgb(192,192,192)" x="164.5" y="30.5" width="24"
+                                        height="317" isTracker="1366707972030" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                            </g>
+                            <g visibility="visible"
+                               zIndex="1" transform="translate(613,212) rotate(90) scale(-1,1)"
+                               width="558" height="202" clip-path="url(#highcharts-5)">
+                                <rect
+                                        fill="rgb(192,192,192)" x="13.5" y="518.5" width="24" height="39"
+                                        isTracker="1366707972056" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                                <rect
+                                        fill="rgb(192,192,192)" x="63.5" y="453.5" width="24"
+                                        height="104" isTracker="1366707972056" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                                <rect
+                                        fill="rgb(192,192,192)" x="114.5" y="396.5" width="24"
+                                        height="161" isTracker="1366707972056" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                                <rect
+                                        fill="rgb(192,192,192)" x="164.5" y="347.5" width="24"
+                                        height="210" isTracker="1366707972056" fill-opacity="0.0001"
+                                        visibility="visible" style=""></rect>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="hl_emi_tbl_dis">
+            <div id="tblpaymentsDetails">
+                <table id="pmtTab"
+                       style="clear: both; background: none repeat scroll 0 0 #FCFCFC; margin: 0 0 20px 0; text-align: center;">
+                    <tbody>
+                    <tr>
+                        <td height="20"
+                            style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 90px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;"
+                            id="numHead">Năm
+                        </td>
+                        <td height="20"
+                            style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 110px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;"
+                            id="oldBal">Gốc
+                        </td>
+                        <td align="center"
+                            style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 110px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;"
+                            id="pt">Lãi
+                        </td>
+                        <td style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 210px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;"
+                            id="oil">Gốc còn lại
+                        </td>
+                    </tr>
+                    <tr height="18">
+                        <td height="18" align="center" width="64" class="default_td">1</td>
+                        <td align="center" width="64" class="default_td">39,766</td>
+                        <td align="center" width="64" class="default_td">26,426</td>
+                        <td align="center" width="64" class="default_td">1,60,234</td>
+                    </tr>
+                    <tr height="18">
+                        <td height="18" align="center" width="64" class="default_td">2</td>
+                        <td align="center" width="64" class="default_td">45,930</td>
+                        <td align="center" width="64" class="default_td">20,262</td>
+                        <td align="center" width="64" class="default_td">1,14,304</td>
+                    </tr>
+                    <tr height="18">
+                        <td height="18" align="center" width="64" class="default_td">3</td>
+                        <td align="center" width="64" class="default_td">53,054</td>
+                        <td align="center" width="64" class="default_td">13,138</td>
+                        <td align="center" width="64" class="default_td">61,250</td>
+                    </tr>
+                    <tr height="18">
+                        <td height="18" align="center" width="64" class="default_td">4</td>
+                        <td align="center" width="64" class="default_td">61,316</td>
+                        <td align="center" width="64" class="default_td">4,914</td>
+                        <td align="center" width="64" class="default_td">0</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="pl_emi_cal_table" style="margin-top: 15px;">
+            <table
+                    style="clear: both; background: none repeat scroll 0 0 #FCFCFC; margin: 0 0 20px 0; text-align: center;"
+                    width="100%">
+                <tbody>
+                <tr>
+                    <td height="20"
+                        style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 150px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;">
+                        Tên Ngân Hàng
+                    </td>
+                    <td align="center"
+                        style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 150px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;">
+                        Lãi Suất
+                    </td>
+                    <td style="border: 1px solid #DBDAD7; background: #4572A7; border-top: 0; width: 210px; font: 12px Arial, Helvetica, sans-serif; color: #FFFFFF;">
+                        <div id="intr_text" align="center"><span style="width: 170px;" align="center">Thanh toán hàng tháng</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="18">
+                    <td height="18" align="center" class="default_td">Công Ty TNHH MTV Tài Chính Mirae Asset Việt
+                        Nam (MAFC)
+                    </td>
+                    <td align="center" class="default_td">30% - 45%</td>
+                    <td align="center" class="default_td">
+                        <div id="MAFC_bnk"><span></span></div>
+                    </td>
+                </tr>
+                <tr height="18">
+                    <td height="18" align="center" class="default_td">Công ty TNHH MTV Tài Chính Prudential VN
+                        (PRU)
+                    </td>
+                    <td align="center" class="default_td">18% - 38%</td>
+                    <td align="center" class="default_td">
+                        <div id="PRU_bnk"><span></span></div>
+                    </td>
+                </tr>
+                <tr height="18">
+                    <td height="18" align="center" class="default_td">Công Ty TNHH Tài Chính HD SAISON (SAISON)</td>
+                    <td align="center" class="default_td">35% - 45%</td>
+                    <td align="center" class="default_td">
+                        <div id="SAISON_bnk"><span></span></div>
+                    </td>
+                </tr>
+                <tr height="18">
+                    <td height="18" align="center" class="default_td">Ngân hàng TNHH MTV Standard Chartered VN
+                        (STANDARD CHARTERED)
+                    </td>
+                    <td align="center" class="default_td">18% - 24%</td>
+                    <td align="center" class="default_td">
+                        <div id="STANDARDCHARTERED_bnk"><span></span></div>
+                    </td>
+                </tr>
+                <tr height="18">
+                    <td height="18" align="center" class="default_td">Công Ty TNHH MTV Tài Chính VPBank - FE CREDIT
+                        (VPBCF)
+                    </td>
+                    <td align="center" class="default_td">30% - 60%</td>
+                    <td align="center" class="default_td">
+                        <div id="VPBCF_bnk"><span></span></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 5;RightAdjust = 5;TopAdjust = 10;<\/script>");</script>
+</div>
+</body>
+</html>
