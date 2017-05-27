@@ -1,0 +1,668 @@
+body {
+    font-size: 12px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background-color: #203f5f;
+    overflow-x: hidden;
+    background-color: #FFF;
+    color: #666;
+    font-family: Arial, sans-serif;
+}
+
+.red {
+    color: #F00;
+}
+
+h1, h2 {
+    color: #88a943;
+    margin: 0px;
+    padding: 0px;
+}
+
+.text11 {
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #005399;
+    text-decoration: none;
+
+}
+
+.text9 {
+    font-size: 9px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #697e94;
+    text-decoration: none;
+}
+
+.text12 {
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #666;
+    text-decoration: none;
+    /*text-decoration: underline; */
+}
+
+a.text12:hover {
+    text-decoration: none;
+    color: #8DAE48;
+}
+
+.text {
+    font-size: 18px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #005399;
+    text-decoration: none;
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+}
+
+.text2 {
+    font-size: 18px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #00c;
+    text-decoration: none;
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+}
+
+.text3 {
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #666;
+    text-decoration: none;
+    text-transform: uppercase;
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+}
+
+a.text3:hover {
+    text-decoration: none;
+    color: #8DAE48;
+}
+
+.text31 {
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #666;
+    text-decoration: none;
+    font-style: none;
+}
+
+a.btn:link {
+    font-size: 14px;
+    font-variant: normal;
+    color: #588f27;
+    text-decoration: none;
+    padding: 5px 12px 5px 12px;
+}
+
+a.btn:visited {
+    font-size: 14px;
+    font-variant: normal;
+    color: #588f27;
+    text-decoration: none;
+    padding: 5px 12px 5px 12px;
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+}
+
+a.btn:hover {
+    font-size: 14px;
+    font-variant: normal;
+    color: #203f5f;
+    text-decoration: none;
+    padding: 5px 12px 5px 12px;
+
+}
+
+.text4 {
+    font-size: 11px;
+    font-weight: bold;
+    font-variant: normal;
+    color: #666;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.textbox {
+    font-size: 11px;
+    font-weight: normal;
+    color: #666;
+    text-decoration: none;
+    height: 18px;
+    width: 153px;
+    border: none;
+    margin-top: 7px;
+    margin-left: 30px;
+
+}
+
+.text41 {
+    font-size: 12px;
+    font-weight: none;
+    font-variant: normal;
+    color: #666;
+    text-decoration: none;
+}
+
+.font {
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #000000;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.text42 {
+    font-size: 11px;
+    font-weight: none;
+    font-variant: normal;
+    color: #690;
+    text-decoration: none;
+}
+
+.font2 {
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #666666;
+    text-decoration: none;
+}
+
+ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -20px;
+}
+
+ul.menu * {
+    margin: 0;
+    padding: 0
+}
+
+ul.menu a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+ul.menu li {
+    position: relative;
+    float: left;
+    margin-right: 2px
+}
+
+ul.menu ul {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #d1d1d1;
+    display: none;
+    opacity: 0;
+    list-style: none
+}
+
+ul.menu ul li {
+    position: relative;
+    border: 1px solid #aaa;
+    border-top: none;
+    width: 268px;
+    margin: 0
+}
+
+ul.menu ul li a {
+    display: block;
+    padding: 3px 7px 5px;
+    background-color: #ffffff;
+}
+
+/*ul.menu ul li a:hover {background-color:#c5c5c5}*/
+ul.menu ul ul {
+    left: 198px;
+    top: -1px
+}
+
+ul.menu .menulink {
+    border: 1px solid #aaa;
+    padding: 5px 7px 7px;
+    font-weight: bold;
+    background-color: #c5c5c5;
+    width: 234px
+}
+
+/*ul.menu .menulink:hover, ul.menu .menuhover {background-color:#c5c5c5; }*/
+ul.menu .sub {
+    background-color: #ffffff;
+    width: 266px;
+    height: 8px;
+}
+
+ul.menu .topline {
+    border-top: 1px solid #aaa;
+    background-color: #ffffff;
+}
+
+.hintanchor {
+    position: absolute;
+    background-color: #F5FCE1;
+    width: 175px;
+    padding: 3px;
+    border: 1px solid #7F9D27;
+    font: normal 11px Verdana;
+    color: #FF3333;
+    line-height: 18px;
+    z-index: 100;
+    border-right: 3px solid #7F9D27;
+    border-bottom: 3px solid #7F9D27;
+
+}
+
+.hintanchorqa {
+    position: absolute;
+    background-color: #F5FCE1;
+    width: 148px;
+    padding: 1px;
+    border: 1px solid #7F9D27;
+    font: normal 10px Verdana;
+    color: #FF3333;
+    line-height: 14px;
+    z-index: 100;
+    border-right: 2px solid #7F9D27;
+    border-bottom: 2px solid #7F9D27;
+
+}
+
+.brdr5 {
+    border: 5px solid #a2d7f6;
+    background: #f6fcff;
+}
+
+.frmtxt {
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.frmbldtxt {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#txt a {
+    font-size: 11px;
+    line-height: 15px;
+    color: #1c50b0;
+    text-decoration: none;
+}
+
+#txt a:hover {
+    font-size: 11px;
+    line-height: 15px;
+    color: #1c50b0;
+    text-decoration: underline;
+}
+
+#txt ul {
+    margin: 5px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
+}
+
+#txt ul li {
+    background: url(http://www.bimadeals.com/new-images/blk-aro.gif) no-repeat 0px 4px;
+    list-style-type: none;
+    padding-left: 15px;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 4px
+}
+
+#txt ul li a {
+    font-size: 11px;
+    color: #1c50b0;
+    text-decoration: none;
+}
+
+#txt ul li a:hover {
+    text-decoration: underline;
+}
+
+.txtbg {
+    background-image: url(http://www.bimadeals.com/new-images/shd-bg.jpg);
+    width: 446px;
+    height: 20px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    text-align: left;
+    text-indent: 2px;
+    font-weight: bold;
+}
+
+.tbl_txt {
+    color: #373737;
+    font-size: 11px;
+    padding: 2px;
+}
+
+.tbl_blutxt {
+    color: #012743;
+    font-size: 11px;
+    padding: 2px;
+}
+
+.tblwt_txt {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.lfttxtbar a {
+    font-size: 11px;
+    line-height: 15px;
+    color: #1c50b0;
+    text-decoration: none;
+}
+
+.lfttxtbar a:hover {
+    font-size: 11px;
+    line-height: 15px;
+    color: #1c50b0;
+    text-decoration: underline;
+}
+
+.lfttxtbar h1 {
+    font-size: 17px;
+    text-align: center;
+    color: #443133;
+    margin: 0px;
+    padding: 15px 0px 3px 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.lfttxtbar ul {
+    margin: 5px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
+}
+
+.lfttxtbar ul li {
+    background: url(http://www.bimadeals.com/new-images/blk-aro.gif) no-repeat 0px 4px;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 4px
+}
+
+.lfttxtbar ul li a {
+    font-size: 11px;
+    color: #FF0000;
+    text-decoration: none;
+}
+
+.lfttxtbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.lfttxtbar span {
+    font-size: 11px;
+    color: #373737;
+}
+
+.lfttxtbar span a {
+    font-size: 11px;
+    color: #1c50b0;
+    text-decoration: none;
+}
+
+.lfttxtbar span a:hover {
+    color: #1c50b0;
+    text-decoration: underline;
+}
+
+.crdtext ul {
+    margin: 2px 0px 0px 0px;
+    padding: 2px 0px 0px 0px;
+}
+
+.crdtext ul li {
+    background: url(http://www.deal4loans.com/new-images/bt-arrow.gif) no-repeat 5px 5px !important;
+    list-style-type: none;
+    padding-left: 0px;
+    margin-right: 5px;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 4px;
+    font-size: 11px;
+    line-height: 15px;
+    text-align: left;
+    color: #492704;
+}
+
+.crdbg {
+    background-image: url(http://taichinhonline.vn/images/crds-bg.gif);
+    background-repeat: no-repeat;
+    width: 310px;
+    height: 675px;
+    background-size: 310px 675px;
+}
+
+.crdbhdng {
+    font-size: 11px;
+    font-weight: bold;
+    color: #5e3307;
+    text-align: center;
+}
+
+.crdbhdng a {
+    font-size: 11px;
+    font-weight: bold;
+    color: #5e3307;
+    text-align: center;
+}
+
+.crdhorizonbg {
+    background-image: url(/new-images/crds-h-bg.gif);
+    background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 15px;
+    color: #5e3307;
+    width: 960px;
+    height: 26px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.crdhorizonbg a {
+    color: #5e3307;
+}
+
+.crdhorizonbg a:hover {
+    color: #5e3307;
+    text-decoration: underline;
+}
+
+.yelobordr {
+    padding: 10px 10px 0px 10px;
+    border-left: 1px solid #ecd77b;
+    border-right: 1px solid #ecd77b;
+}
+
+.crdbold {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #5e3307;
+    text-align: left;
+}
+
+.intrl_txt {
+    margin: auto;
+    width: 970px;
+    margin-top: 1px;
+}
+
+.left_cntnt {
+    width: 663px;
+    height: 33;
+    margin-top: 0px;
+    float: left;
+    clear: right;
+}
+
+.left_cntnt_hdr {
+    width: 663px;
+    height: 33;
+    margin-top: 25px;
+    float: left;
+    clear: right;
+}
+
+.intrl_txt a {
+    text-decoration: none;
+    color: #1C50B0;
+}
+
+.intrl_txt a:hover {
+    text-decoration: underline;
+    color: #05132D;
+}
+
+.reveal-modal-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    background: url(http://taichinhonline.vn/images/ajax-load.gif) no-repeat rgba(0, 0, 0, .8);
+    background-position: center;
+    background-size: 100px 100px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.text div p .text {
+}
+
+.text2 .text2 {
+    color: #333;
+}
+
+.emi_right_box {
+    float: left;
+    width: 340px;
+    border: 5px solid #547295;
+}
+
+.emi_sum_amount {
+    float: left;
+    padding: 5px;
+    width: 160px;
+}
+
+.emi_sum_value {
+    float: right;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 158px;
+    height: 15px;
+}
+
+.default_td {
+    border: 1px solid #DBDAD7;
+    background: #ffffff;
+    border-top: 0;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+/* Big box with list of options */
+#ajax_listOfOptions {
+    position: absolute; /* Never change this one */
+    width: 250px; /* Width of box */
+    height: 160px; /* Height of box */
+    overflow: auto; /* Scrolling features */
+    border: 1px solid #317082; /* Dark green border */
+    background-color: #FFF; /* White background color */
+    color: black;
+    text-align: left;
+    font-size: 10px;
+    z-index: 50;
+}
+
+#ajax_listOfOptions div {
+    /* General rule for both .optionDiv and .optionDivSelected */
+    margin: 1px;
+    padding: 1px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+#ajax_listOfOptions .optionDivSelected { /* Selected item in the list */
+    background-color: #2375CB;
+    color: #FFF;
+}
+
+#ajax_listOfOptions_iframe {
+    background-color: #F00;
+    position: relative;
+    z-index: 5;
+}
+
+.product_bank_name a {
+    text-decoration: none;
+}
+
+table {
+    font-size: 12px;
+}
+
+.text9 div {
+    color: #060;
+}
+
+.link-menu-banner-class:hover {
+    color: #8DAE48;
+}
+
+.btn-class-maytinh {
+    background-color: #8DAE48;
+    background-image: linear-gradient(to bottom, #AFC67C, #8DAE48);
+    box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset;
+    border-color: #8DAE48 #8DAE48 #8DAE48 #8DAE48;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    padding: 1px 3px 1px 3px;
+    margin: 2px 4px;
+    margin-top: -5px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.text .text {
+    color: #690;
+    font-weight: bold;
+    font-size: 16px;
+}
