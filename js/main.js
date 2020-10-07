@@ -15,7 +15,7 @@ var App = {
 
         var basicMsg = '####################################################################################\n' +
             '|                                                                                  |\n' +
-            '|    Hi, I\'m ' + commandText('Toan Nguyen') + ' - Backend Web Developer in Hanoi, Vietnam.                |\n' +
+            '|    Hi, I\'m ' + commandText('Toan Nguyen') + ' - Just another guy in Hanoi, Vietnam.                     |\n' +
             '|    Please type ' + commandText('menu') + ' for a list of commands.                                      |\n' +
             '|                                                                                  |\n' +
             '####################################################################################\n';
@@ -35,7 +35,7 @@ var App = {
             "|[[b;#00DE12;]                                                         \\______/            \\______/                        ]|\n" +
             '|                                                                                                             |\n' +
             '|                                                                                                             |\n' +
-            '|      Hi, I\'m ' + commandText('Toan Nguyen') + ' - Backend Web Developer in Hanoi, Vietnam.                                         |\n' +
+            '|      Hi, I\'m ' + commandText('Toan Nguyen') + ' - Just another guy from Hanoi, Vietnam.                                            |\n' +
             '|      Please type ' + commandText('menu') + ' for a list of commands.                                                               |\n' +
             '|                                                                                                             |\n' +
             '###############################################################################################################\n';
@@ -67,12 +67,12 @@ var App = {
     },
     github: function () {
         this.echo();
-        this.echo('|  http://www.github.com/nntoan');
+        this.echo('|  https://github.com/nntoan');
         this.echo();
     },
     facebook: function () {
         this.echo();
-        this.echo('|  http://www.facebook.com/nntoan');
+        this.echo('|  https://www.facebook.com/nntoans');
         this.echo();
     },
     linkedin: function () {
@@ -92,8 +92,8 @@ var App = {
         this.echo('|  DOB:          23/09/1993 (' + commandText((currentYear - 1993)) + ' y.o)');
         this.echo('|  Location:     ' + commandText('Hanoi, Vietnam'));
         this.echo();
-        this.echo('|  Vocation:     I am a Backend Web Developer (primarily ' + commandText('PHP') + ') and DevOps (Linux, AWS) specialist.');
-        this.echo('|                I have been programming in a enterprise environment for ' + commandText('over 5 years.'));
+        this.echo('|  Vocation:     I am a Fullstack Developer (primarily ' + commandText('PHP/NodeJS') + ') and DevOps (Linux, AWS) specialist.');
+        this.echo('|                I have been working in enterprise environments for ' + commandText('the last 7 years.'));
         this.echo('|                I also do my fair share of front end development using technologies such as ' + commandText('Angular.js') + ' and ' + commandText('jQuery'));
         this.echo();
         this.echo('|  Employment:   I am currently ' + commandText('freelancing') + ' in the ' + commandText('Hanoi') + ' area. Get in touch if you\'d like to discuss a proposal!');
@@ -101,14 +101,14 @@ var App = {
     },
     projects: function () {
         this.echo();
-        this.echo('|  ' + commandText('Goldsun') + '        http://goldsun.vn              // OpenCart  -- Main Developer');
-        this.echo('|  ' + commandText('ThuDoGroup') + '     http://thudogroup.vn           // Joomla    -- Main Developer');
-        this.echo('|  ' + commandText('NoiThatThuDo') + '   N/A                            // OpenCart  -- Main Developer');
-        this.echo('|  ' + commandText('MatPho') + '         N/A                            // Magento   -- Backend Lead');
-        this.echo('|  ' + commandText('LuyenCong') + '      http://www.luyencong.net       // MyBB      -- Main Developer');
-        this.echo('|  ' + commandText('Glam It!') + '       http://www.glamit.com          // OpenCart  -- Backend Developer');
-        this.echo('|  ' + commandText('CC-Stores') + '      http://cc-stores.com           // .NET MVC  -- Backend Developer');
-        this.echo('|  ' + commandText('UpLink') + '         http://uplinkenglish.com       // AngularJS -- Backend Developer');
+        this.echo('|  ' + commandText('Kathmandu') + '      https://www.kathmandu.co.nz              // Magento 2');
+        this.echo('|  ' + commandText('Total Tools') + '    https://www.totaltools.com.au            // Magento 2');
+        this.echo('|  ' + commandText('Windsor Smith') + '  https://www.windsorsmith.com.au          // Magento 2');
+        this.echo('|  ' + commandText('Oh My Bash!') + '    https://github.com/ohmybash/oh-my-bash   // Bash Scripts');
+        this.echo('|  ' + commandText('LuyenCong') + '      https://www.luyencong.net                // MyBB');
+        this.echo('|  ' + commandText('GoJira') + '         http://github.com/nntoan/gojira          // Symfony CLI');
+        this.echo('|  ' + commandText('Cezerin2') + '       https://cezerin.org                      // React & Node.js');
+        this.echo('|  ' + commandText('UpLink') + '         https://uplinkenglish.com                // AngularJS');
         this.echo();
     },
     skills: function () {
@@ -117,19 +117,15 @@ var App = {
         this.echo();
         this.echo('|  ' + commandText('PHP') + '                    ##[[g;#00DE12;]#################################################]  ##');
         this.echo('|  ' + commandText('Linux') + '                  ##[[g;#42D100;]################################################]   ##');
-        this.echo('|  ' + commandText('HTML5') + '                  ##[[g;#5BD100;]############################################]       ##');
-        this.echo('|  ' + commandText('Javascript') + '             ##[[g;#5BD100;]############################################]       ##');
-        this.echo('|  ' + commandText('CSS') + '                    ##[[g;#99D100;]############################################]       ##');
+        this.echo('|  ' + commandText('React & Node.js') + '        ##[[g;#5BD100;]############################################]       ##');
         this.echo('|  ' + commandText('.NET (C#)') + '              ##[[g;#B2D100;]###############################]                    ##');
         this.echo('|  ' + commandText('Java') + '                   ##[[g;#D1B900;]####################]                               ##');
-        this.echo('|  ' + commandText('.NET MVC (C#)') + '          ##[[g;#D16200;]##############]                                     ##');
         this.echo();
         this.echo('|  ' + commandText('Frameworks and CMS'));
         this.echo();
-        this.echo('|  ' + commandText('Magento') + '                ##[[g;#42D100;]###############################################]    ##');
+        this.echo('|  ' + commandText('Magento 2') + '              ##[[g;#00DE12;]##################################################] ##');
         this.echo('|  ' + commandText('Open Cart') + '              ##[[g;#5BD100;]#############################################]      ##');
         this.echo('|  ' + commandText('MyBB') + '                   ##[[g;#99D100;]############################################]       ##');
-        this.echo('|  ' + commandText('XenForo') + '                ##[[g;#99D100;]#########################################]          ##');
         this.echo('|  ' + commandText('AngularJS') + '              ##[[g;#B2D100;]########################################]           ##');
         this.echo('|  ' + commandText('Cake PHP') + '               ##[[g;#D16200;]##############]                                     ##');
         this.echo('|  ' + commandText('Symfony 2') + '              ##[[g;#D13F00;]#########]                                          ##');
@@ -138,27 +134,28 @@ var App = {
         this.echo('|  ' + commandText('Other'));
         this.echo();
         this.echo('|  ' + commandText('AWS') + '                    ##[[g;#5BD100;]############################################]       ##');
+        this.echo('|  ' + commandText('Linux') + '                  ##[[g;#5BD100;]#################################################]  ##');
         this.echo('|  ' + commandText('Grunt/Gulp') + '             ##[[g;#B2D100;]#######################################]            ##');
-        this.echo('|  ' + commandText('Virtualbox') + '             ##[[g;#B2D100;]#######################################]            ##');
-        this.echo('|  ' + commandText('Vagrant') + '                ##[[g;#B2D100;]#######################################]            ##');
+        this.echo('|  ' + commandText('Docker/Hyper-V') + '         ##[[g;#5BD100;]###########################################]        ##');
         this.echo();
     },
     contact: function () {
         this.echo();
-        this.echo('|  ' + commandText('Email') + ':         nntoan@protonmail.com');
+        this.echo('|  ' + commandText('Phone') + ':         091.883.1338');
+        this.echo('|  ' + commandText('Email') + ':         business@nntoan.com');
         this.echo('|  ' + commandText('LinkedIn') + ':      https://linkedin.com/in/nntoan');
         this.echo();
     },
     credits: function () {
         this.echo();
-        this.echo('|  Site built by ' + commandText('Toan Nguyen'));
+        this.echo('|  Crafted with ♥ by ' + commandText('Toan Nguyen'));
         this.echo('|  Using ' + commandText('Jquery Terminal Emulator') + ' by ' + commandText('Jakub Jankiewicz') + ': http://terminal.jcubic.pl');
         this.echo();
     },
     awards: function () {
         this.echo();
-        this.echo('|  ' + commandText('Magento Developer Certificate'));
-        this.echo('|  ' + commandText('Magento Developer Certificate Plus'));
+        this.echo('|  ' + commandText('Magento 2 Certificated Professional Developer: https://u.magento.com/certification/directory/dev/1968053/'));
+        this.echo('|  ' + commandText('Magento 2 Certificated Professional Developer Plus'));
         this.echo();
     },
     all: function () {
@@ -168,11 +165,12 @@ var App = {
         this.exec('about');
         this.exec('projects');
         this.exec('skills');
+        this.exec('awards');
+        this.exec('contact');
         this.exec('github');
         this.exec('linkedin');
         this.exec('facebook');
         this.exec('twitter');
-        this.exec('contact');
         this.exec('credits');
         App.allSection = false;
     }
